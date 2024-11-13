@@ -1,0 +1,310 @@
+/* experimentostyle.css */
+:root {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --accent-color: #00ff95;
+    --spacing: 2rem;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
+
+section {
+    padding: var(--spacing);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hero {
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, var(--accent-color), #00c3ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    opacity: 0.8;
+}
+
+.about {
+    background-color: #1a1a1a;
+    text-align: center;
+}
+
+.contact {
+    text-align: center;
+}
+
+.whatsapp-btn {
+    display: inline-block;
+    background-color: #25D366;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-3px);
+}
+
+/* Estilos para la sección horizontal */
+.horizontal-sections {
+    padding: 2rem 0;
+    background-color: #000000;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.sections-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+/* Estilos para las tarjetas de sección */
+.section-card {
+    background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+}
+
+.section-card h2 {
+    background: linear-gradient(135deg, #00ff95 0%, #00b8ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #00b8ff;
+    padding-bottom: 0.5rem;
+}
+
+/* Estilos para las habilidades */
+.skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.skill-category h3 {
+    color: #34495e;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.skill-item i {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    color: #3498db;
+}
+
+.skill-info {
+    flex-grow: 1;
+}
+
+.progress-bar {
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+    position: relative;
+}
+
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: #3498db;
+    border-radius: 4px;
+    width: var(--progress);
+}
+
+/* Estilos para la experiencia */
+.experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.experience-item {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.experience-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.experience-header i {
+    color: #3498db;
+}
+
+.experience-header strong {
+    color: #7f8c8d;
+}
+
+.company {
+    color: #7f8c8d;
+    font-style: italic;
+    margin: 0.5rem 0;
+}
+
+.experience-details {
+    margin-top: 0.5rem;
+    padding-left: 1.2rem;
+}
+
+.experience-details li {
+    margin-bottom: 0.3rem;
+    color: #666;
+}
+
+/* Estilos para los logros */
+.achievements-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.achievement-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.achievement-icon {
+    background: #3498db;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.achievement-content h3 {
+    color: #2c3e50;
+    margin-bottom: 0.3rem;
+    font-size: 1.1rem;
+}
+
+.achievement-content p {
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.achievement-date {
+    color: #95a5a6;
+    font-size: 0.9rem;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    .sections-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-card {
+        padding: 1rem;
+    }
+}
+
+/* Animación para las barras de progreso */
+.progress-bar[data-progress] {
+    --progress: 0%;
+}
+
+.progress-bar[data-progress="90"] { --progress: 90%; }
+.progress-bar[data-progress="85"] { --progress: 85%; }
+.progress-bar[data-progress="88"] { --progress: 88%; }
+.progress-bar[data-progress="82"] { --progress: 82%; }
+
+.typewriter {
+    overflow: hidden;
+    border-right: .15em solid var(--accent-color);
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 0.15em;
+    animation: 
+        typing 3.5s steps(30, end),
+        blink-caret .75s step-end infinite;
+    max-width: fit-content;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(180, 99, 226, 0.897);
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #00b8ff }
+
+}
+
+.chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    height: 500px;
+    z-index: 1000;
+    background: var(--bg-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.chat-widget {
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .chat-container {
+        width: 90%;
+        height: 400px;
+        bottom: 10px;
+        right: 5%;
+    }
+}
