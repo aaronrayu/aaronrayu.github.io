@@ -3,47 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aarón Rayú - HRIS Automation AI</title>
-    <link rel="stylesheet" href="experimentostyle.css">
+    <title>Web Scraping Tool</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <section class="hero">
-        <h1>Aarón Rayú</h1>
-        <p>HRIS Expert | AI & Workflow Automation</p>
-    </section>
+    <header class="header">
+        <h1 class="header__title">🔍 Scraping Tool</h1>
+    </header>
 
-    <section class="about">
-        <div style="padding: 0 10rem;">
-            <h1 class="typewriter">Sobre Mí</h1>
-            <p class="typewriter-delay">No quiero aburrite con tanto texto, por eso diseñé este bot que responderá lo que quieras saber sobre mi experiencia profesional.</p>
+    <!-- Contenedor inicial -->
+    <div class="container" id="inicio">
+        <h1>Herramienta de Web Scraping</h1>
+        
+        <div class="descripcion">
+            <p>Utiliza esta herramienta para extraer información de cualquier sitio web, incluyendo direcciones de correo electrónico, enlaces a redes sociales, imágenes y metadatos.</p>
         </div>
-         <!-- Zapier Chatbot -->
-        <div class="chatbot-container">
-            <iframe class="chatbot-iframe" src='https://interfaces.zapier.com/embed/chatbot/cm3dgpeet00ac5e7r3qow39re'></iframe>
-        </div>
-    </section>
+        
+        <!-- Formulario de búsqueda -->
+        <form id="scrapingForm">
+            <input type="url" id="urlInput" placeholder="Introduce la URL" required>
+            <button type="submit">Obtener Datos</button>
+        </form>
+    </div>
 
-    <section class="contact">
-        <h2>Contacto</h2>
-        <div class="contact-buttons">
-            <a href="https://wa.me/+5492364697158" class="contact-btn whatsapp" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-whatsapp"></i>
-                WhatsApp
-            </a>
-            <a href="mailto:aaronrayu@gmail.com" class="contact-btn email" target="_blank" rel="noopener noreferrer">
-                <i class="far fa-envelope"></i>
-                Email
-            </a>
-            <a href="https://www.linkedin.com/in/aaronrayu/" class="contact-btn linkedin" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-linkedin"></i>
-                LinkedIn
-            </a>
-        </div>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    </section>
+    <!-- Contenedor de resultados (inicialmente oculto) -->
+    <div class="container hidden" id="resultados">
+        <!-- Indicador de carga -->
+        <div id="loading" class="loading"></div>
 
-    <footer class="footer">
-        <p>&copy; 2023 Aarón Rayú. Todos los derechos reservados.</p>
+        <!-- Contenedor de resultados -->
+        <div id="resultado" class="resultado">
+            <!-- El contenido de los resultados se insertará aquí -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <footer>
+        <p>Creado por <a href="https://www.linkedin.com/in/aaron-rayu/" target="_blank">Aarón Rayú</a></p>
     </footer>
 </body>
 </html>
