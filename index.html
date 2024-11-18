@@ -3,44 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Scraping Tool</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Aarón Rayú - Tech Profile.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <header class="header">
-        <h1 class="header__title">🔍 Scraping Tool</h1>
-    </header>
+    <main class="container">
+        <section class="hero">
+            <h1>Aarón Rayú</h1>
+            <p>Welcome to my tech profile.</p>
+        </section>
 
-    <!-- Contenedor inicial -->
-    <div class="container" id="inicio">
-        <h1>Herramienta de Web Scraping</h1>
-        
-        <div class="descripcion">
-            <p>Utiliza esta herramienta para extraer información de cualquier sitio web, incluyendo direcciones de correo electrónico, enlaces a redes sociales, imágenes y metadatos.</p>
-        </div>
-        
-        <!-- Formulario de búsqueda -->
-        <form id="scrapingForm">
-            <input type="url" id="urlInput" placeholder="Introduce la URL" required>
-            <button type="submit">Obtener Datos</button>
-        </form>
-    </div>
+        <section class="about">
+            <div class="about-content">
+                <h1>About Me</h1>
+                <p>I am passionate about technology, process automation, and finding innovative solutions to current workplace challenges.</p>
+                
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            How can I help you? <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <ul>
+                                <li>Process automation with multiple tools</li>
+                                <li>API integration and webhook development</li>
+                                <li>HRIS Systems implementation and configuration</li>
+                                <li>Low-code tools solution development</li>
+                                <li>Chatbot and virtual assistant development integrating multiple AI engines</li>
+                            </ul>
+                        </div>
+                    </div>
 
-    <!-- Contenedor de resultados (inicialmente oculto) -->
-    <div class="container hidden" id="resultados">
-        <!-- Indicador de carga -->
-        <div id="loading" class="loading"></div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            Background <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <ul>
+                                <li>HR Generalist Expert</li>
+                                <li>Project Manager & Entrepreneur</li>
+                                <li>Data Analytics & Reporting</li>
+                                <li>HRIS & Digital Solutions Implementation</li>
+                            </ul>
+                        </div>
+                    </div>
 
-        <!-- Contenedor de resultados -->
-        <div id="resultado" class="resultado">
-            <!-- El contenido de los resultados se insertará aquí -->
-        </div>
-    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            Technical Skills <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <ul>
+                                <li>Python & JavaScript developer</li>
+                                <li>SAP SuccessFactors Specialist</li>
+                                <li>No-code: Zapier, Make.com, Power Automate</li>
+                                <li>Microsoft Power Platform</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-container" style="display: none;">
+                <iframe class="chatbot-iframe" src='https://interfaces.zapier.com/embed/chatbot/cm3dgpeet00ac5e7r3qow39re'></iframe>
+            </div>
+        </section>
+        <section class="projects">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3><a href="https://github.com/aaronrayu/web-scraping-tool">Web Scraping Tool</a></h3>
+                    <p>A versatile web scraping application that extracts data from websites.</p>
+                    <div class="project-tags">
+                        <span>#python</span>
+                        <span>#javascript</span>
+                        <span>#html</span>
+                    </div>
+                </div>
+            <div class="project-card">
+                    <h3><a href="#">Coming Soon</a></h3>
+                    <p>Project under development. Stay tuned!</p>
+                    <div class="project-tags">
+                        <span>#comingsoon</span>
+                    </div>
+            </div> 
+            </div>
+        </section>
 
-    <script src="script.js"></script>
 
-    <footer>
-        <p>Creado por <a href="https://www.linkedin.com/in/aaron-rayu/" target="_blank">Aarón Rayú</a></p>
+        <section class="contact">
+            <h2>Contact</h2>
+            <div class="contact-buttons">
+                <a href="https://wa.me/+5492364697158" class="contact-btn whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+                <a href="mailto:aaronrayu@gmail.com" class="contact-btn email">
+                    <i class="far fa-envelope"></i>
+                    <span>Email</span>
+                </a>
+                <a href="https://www.linkedin.com/in/aaronrayu/" class="contact-btn linkedin">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Aarón Rayú.</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    // Toggle active class on the button
+                    this.classList.toggle('active');
+                    
+                    // Find the associated content
+                    const content = this.nextElementSibling;
+                    
+                    // Toggle the active class on the content
+                    if (this.classList.contains('active')) {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        content.classList.add('active');
+                    } else {
+                        content.style.maxHeight = "0";
+                        content.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
